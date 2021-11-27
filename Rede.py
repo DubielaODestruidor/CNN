@@ -1,14 +1,10 @@
-# Neste arquivo tem o método de buscar e testar uma imagem em específico.
-
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import (
     BatchNormalization, Conv2D, MaxPooling2D, Activation, Flatten, Dropout, Dense
 )
 from keras.preprocessing.image import ImageDataGenerator
-
-#Essas duas bibibliotecas são para normalizar a imagem nova de teste que chega
 import numpy as np
-from keras.preprocessing import image #biblioteca para normalizar a imagem nova que for testada.
+from keras.preprocessing import image
 
 #-------------------------------------------------------------------------
 
@@ -41,7 +37,7 @@ gerador_treinamento = ImageDataGenerator(rescale = 1./255,
                                          zoom_range = 0.2)
 gerador_teste = ImageDataGenerator(rescale = 1./255)
 
-# A partir daqui estou teianando a rede.
+# A partir daqui estou treianando a rede.
 
 base_treinamento = gerador_treinamento.flow_from_directory(r'archive\Tire Textures\training_data',
                                                            target_size = (64, 64),
